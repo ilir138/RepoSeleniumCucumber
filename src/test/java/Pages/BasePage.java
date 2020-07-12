@@ -15,14 +15,26 @@ public class BasePage {
     public void type(By locator, String data){
         Web.getDriver().findElement(locator).sendKeys(data);
     }
+    public void typeJS(By locator, String data){
+        WebElement element = Web.getDriver().findElement(locator);
+        JavascriptExecutor js = (JavascriptExecutor)Web.getDriver();
+        js.executeScript("arguments[0].values='%s';",element,data);
+    }
+
     // generic method to click web element
     public void clickThis(By locator) {
         Web.getDriver().findElement(locator).click();
     }
+
     public void clickThis(WebElement element) {
         element.click();
     }
 
+    public void clickThisJS(By locator){
+        WebElement element = Web.getDriver().findElement(locator);
+        JavascriptExecutor js = (JavascriptExecutor)Web.getDriver();
+        js.executeScript("arguments[0].click();",element);
+    }
 
     public void clearField (By locator){
         Web.getDriver().findElement(locator).clear();
@@ -99,4 +111,5 @@ public class BasePage {
     public Set<String>getAllWindowHandles(){
         return Web.getDriver().getWindowHandles();
     }
+
 }
