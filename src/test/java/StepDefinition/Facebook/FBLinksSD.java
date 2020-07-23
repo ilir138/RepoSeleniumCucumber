@@ -10,6 +10,7 @@ import cucumber.api.java.en.When;
 public class FBLinksSD {
     LandingPage landingPage = new LandingPage();
 
+
     @Given("^1. I am on facebook landing page$")
     public void launchFaceBook(){
         Web.initDriver("https://www.facebook.com");
@@ -19,6 +20,7 @@ public class FBLinksSD {
         }catch (InterruptedException e){
             e.printStackTrace();
         }
+
     }
     @When("^1. I click on Terms link$")
     public void clickTerms(){

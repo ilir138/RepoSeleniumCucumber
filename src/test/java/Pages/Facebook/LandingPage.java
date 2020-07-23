@@ -52,7 +52,6 @@ public class LandingPage extends BasePage {
                 break;
             }
         }
-
     }
     public void allWindowsOpen(){
         try {
@@ -69,11 +68,8 @@ public class LandingPage extends BasePage {
                 break;
             }
         }
-        try {
-            Thread.sleep(3000);
-        }catch (InterruptedException e){
-            e.printStackTrace();
-        }
+
+
     }
     public void clickDataPolicy(){
         clickThis(dataPolicyLocator);

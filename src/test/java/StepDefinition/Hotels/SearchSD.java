@@ -47,7 +47,7 @@ SearchResultPage searchResultPage = new SearchResultPage();
     }
      searchResultPage.mouseHoverToPrice(userWantsToSelectThis);
 }
-@Then("^I verify that the cheapest hotel is less than 100 USD$")
+@Then("^I verify that the cheapest hotel is less than \\$100$")
     public void verify(){
     String lowestPrice = searchResultPage.getLowestPriceText().replace("$","");
     int lowest = Integer.parseInt(lowestPrice);
